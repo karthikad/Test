@@ -9,11 +9,8 @@ pipeline {
 
     stage('Test') {
       agent any
-      environment {
-        CI = 'true'
-      }
       steps {
-        retry(count: 2)
+        echo 'Hello'
       }
     }
 
