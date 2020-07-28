@@ -13,7 +13,13 @@ pipeline {
         CI = 'true'
       }
       steps {
-        bat './jenkins/scripts/test.sh'
+        retry(count: 2)
+      }
+    }
+
+    stage('Deliver') {
+      steps {
+        echo 'HelloWorld'
       }
     }
 
